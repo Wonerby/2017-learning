@@ -1,4 +1,4 @@
-var custFeedback = function() {
+function custFeedback() {
     var IsPC = function() {
         var userAgentInfo = navigator.userAgent;
         var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
@@ -11,20 +11,8 @@ var custFeedback = function() {
         }
         return flag;
     }
-    var isPc = IsPC ? "PC" : "H5";
-
+    var isPc = IsPC() ? "PC" : "H5";
     var getCata = function() {
-        // switch (isPc) {
-        //     case "H5":
-        //         // var reg = new RegExp("https?://.+\..+\..+\..+/(.+)/(.+)/(.+)\.shtml", "i");//km28
-        //         // var reg2 = new RegExp("https?://.+\..+\..+\..+/(.+)/(.+)\.shtml", "i");//km28
-        //         var reg = new RegExp("https?://.+\.com/([^/]+)/([^/]+)/([^/]+)(/.+)*\.shtml", "i"); //kmway
-        //         var reg2 = new RegExp("https?://.+\.com/([^/]+)/([^/]+)\.shtml", "i"); //kmway
-        //         break;
-        //     default:
-        //         var reg = new RegExp("https?://.+\.com/([^/]+)/([^/]+)/([^/]+)(/.+)*\.shtml", "i"); //km28
-        //         var reg2 = new RegExp("https?://.+\.com/([^/]+)/([^/]+)\.shtml", "i"); //km28
-        // }
         var reg = new RegExp("https?://.+\.com/([^/]+)/([^/]+)/([^/]+)(/[^/]+)*\.shtml", "i");
         var reg2 = new RegExp("https?://.+\.com/([^/]+)/([^/]+)\.shtml", "i");
         var r = window.location.href.match(reg);
